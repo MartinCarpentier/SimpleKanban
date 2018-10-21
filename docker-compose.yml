@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-    proxy:
+    web:
         external: true
     internal:
         external: false
@@ -10,11 +10,11 @@ services:
     carpentierpro:
         image: martincarp/carpentierprov2:latest
         labels:
-          - traefik.backend=carpentierpro
-          - traefik.frontend.rule=Host:www.carpentier.pro, carpentier.pro
-          - traefik.docker.network=proxy
+          - traefik.backend=simplekanban
+          - traefik.frontend.rule=Host:kanban.carpentier.pro
+          - traefik.docker.network=web
           - traefik.enable=true
         networks:
           - internal
-          - proxy
+          - web
         restart: always
