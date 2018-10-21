@@ -8,7 +8,7 @@ networks:
 
 services:
     carpentierpro:
-        image: martincarp/carpentierprov2:latest
+        build: .
         labels:
           - traefik.backend=simplekanban
           - traefik.frontend.rule=Host:kanban.carpentier.pro
