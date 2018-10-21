@@ -1,0 +1,20 @@
+version: '3'
+
+networks:
+    proxy:
+        external: true
+    internal:
+        external: false
+
+services:
+    carpentierpro:
+        image: martincarp/carpentierprov2:latest
+        labels:
+          - traefik.backend=carpentierpro
+          - traefik.frontend.rule=Host:www.carpentier.pro, carpentier.pro
+          - traefik.docker.network=proxy
+          - traefik.enable=true
+        networks:
+          - internal
+          - proxy
+        restart: always

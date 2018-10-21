@@ -4,25 +4,37 @@
   <div class="container-fluid" style="margin-top:2em">
     <div class="row">
       <div class="col-4">
-        <h2>To Do</h2>
-        <div class="container" dragula="KANBAN" [(dragulaModel)]="toDo">
-          <div *ngFor="let task of toDo">{{ task.name }}</div>
+        <div class="card">
+            <div class="card-header">
+              To do
+            </div>
+            <div class="card-body" dragula="KANBAN" [(dragulaModel)]="toDo">
+              <div class="p-3 mb-2 bg-warning text-dark rounded" *ngFor="let task of toDo">{{ task.name }}</div>
+            </div>
         </div>
       </div>
 
       <div class="col-4">
-        <h2>In progress</h2>
-        <div class="container" dragula="KANBAN" [(dragulaModel)]="inProgress">
-          <div *ngFor="let task of inProgress">{{ task.name }}</div>
+        <div class="card">
+            <div class="card-header">
+              In Progress
+            </div>
+            <div class="card-body" dragula="KANBAN" [(dragulaModel)]="inProgress">
+              <div class="p-3 mb-2 bg-warning text-dark rounded" *ngFor="let task of inProgress">{{ task.name }}</div>
+            </div>
         </div>
       </div>
 
       <div class="col-4">
-          <h2>Done</h2>
-          <div class="container" dragula="KANBAN" [(dragulaModel)]="done">
-            <div *ngFor="let task of done">{{ task.name }}</div>
-          </div>
+        <div class="card">
+            <div class="card-header">
+              Done
+            </div>
+            <div class="card-body" dragula="KANBAN" [(dragulaModel)]="done">
+              <div class="p-3 mb-2 bg-warning text-dark rounded" *ngFor="let task of done">{{ task.name }}</div>
+            </div>
         </div>
+      </div>
     </div>
   </div>
 </div>
